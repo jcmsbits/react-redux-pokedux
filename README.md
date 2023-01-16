@@ -1,6 +1,20 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto fue comenzado con [Create React App](https://github.com/facebook/create-react-app).
+
+### `Que hace el proyecto`
+Despliega 151 tarjetas con pokemones y sus respectivos poderes. También cuenta con un buscador para filtrar las tarjetas, cada una de ellas tiene un botton donde se puede seleccionar como favorito o no. 
+
+
+### `Como funciona el proyecto`
+
+El proyecto hace una petición a través de la librería Axios, con la respuesta, se usa createAsyncThunk para hacer otra petición con Promise.all y Axios. Luego con un dispatch se actualiza el estado y seguido se agrega también a localStorage la petición echa.
+
+ Se renderiza las Cards con el componente PokemonList que pasa todas las props al componente compuesto PokemonCard el cual incluye al componente Meta y StarButton para mostrar más detalles y acciones en el renderizado...
+
+ El componente Search filtra todos los elementos que coinciden en la entrada "input" en minúscula con todos los que tiene el estado. Se utiliza, los métodos filter, toLowerCase, include... 
+
+ Para el estado se utilizó redux, creando 2 Slice con createSlice y se usó combineReducers para el dispatcher...
 
 ## Available Scripts
 
@@ -38,33 +52,3 @@ If you aren't satisfied with the build tool and configuration choices, you can `
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
